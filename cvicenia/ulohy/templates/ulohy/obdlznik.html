@@ -1,0 +1,16 @@
+<form method="post">
+    {% csrf_token %} 
+    <label for="a">Zadaj dĺžku strany a:</label>
+    <input type="number" name="a" step="any">
+    <br>
+    <label for="b">Zadaj dĺžku strany b:</label>
+    <input type="number" name="b" step="any">
+    <br>
+    <button>Vypočítať</button>
+</form>
+{% if obsah is not None %}
+    <p>Obsah: {{ obsah }}</p>
+{% endif %}
+{% if obvod is not None %}
+    <p>Obvod: {{ obvod }}</p>
+{% endif %}

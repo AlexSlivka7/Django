@@ -1,0 +1,9 @@
+<form method="post">
+    {% csrf_token %} 
+    <label for="rok_narodenia">Zadaj svoj rok narodenia:</label>
+    <input type="number" name="rok_narodenia" required>
+    <button>Vypočítať</button>
+</form>
+{% if vek is not None %}
+    <p>Váš vek je: {{ vek }} rokov.</p>
+{% endif %}

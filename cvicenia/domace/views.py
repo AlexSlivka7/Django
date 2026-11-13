@@ -14,3 +14,4 @@ def du2_(request):
         "zaluby": ["prax", "matematika", "fyzika"]
     }
     return render(request, 'domace/vizitka.html', kontext)
+

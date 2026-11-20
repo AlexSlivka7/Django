@@ -1,0 +1,13 @@
+<form method="post">
+    {% csrf_token %} 
+    <label for="body">Zadaj počet získaných bodov:</label>
+    <input type="number" name="body" step="any">
+    <br>
+    <label for="maximum">Zadaj maximálny počet bodov:</label>
+    <input type="number" name="maximum" step="any">
+    <br>
+    <button>Vypočítať priemer</button>
+    {%if priemer is not None%}
+        <p>Získaný počet bodov je {{body|floatformat:2}} z {{maximum}} bodov = {{priemer|floatformat:2}}% znamka je {{znamka}}</p>
+    {%endif%}
+    </form>

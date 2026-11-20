@@ -1,0 +1,23 @@
+<form method="get">
+    <label for="max_cena">Zadaj maximálnu cenu:</label>
+    <input type="number" name="max_cena" step="any">
+    <button type="submit">Filtrovať</button>
+</form>
+<table border = "1">
+    <tr>
+        <th>Produkt</th>
+        <th>Cena</th>
+    </tr>
+
+    {% for p in produkty%}
+        <tr>
+            <td>{{ p.nazov }}</td>
+            {%if p.cena < 5 %}
+                <th>{{ p.cena|floatformat:2 }}€</th>
+            {%else%}
+                <td>{{ p.cena|floatformat:2 }}€</td>
+            {%endif%}
+    </tr>
+    {% endfor%}
+</table>
+
